@@ -1,0 +1,18 @@
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int locator = n;
+        int other = 0;
+        int [] ans = new int [nums.length];
+        for(int i = 0; i < nums.length; i++){
+            if(i%2==0){
+                ans[i] = nums[other];
+                other++;
+            }
+            else{
+                ans[i] = nums[locator];
+                locator++;
+            }
+        }
+        return ans;
+    }
+}
