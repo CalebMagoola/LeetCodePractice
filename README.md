@@ -1,3 +1,3 @@
 # LeetCodePractice
-Wanted to upload my solutions as I practice more on Leetcode.
+My Personal Solutions to Leetcode Practice problems.
 Solutions are in Java.
