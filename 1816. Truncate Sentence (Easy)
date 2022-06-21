@@ -1,0 +1,18 @@
+class Solution {
+    public String truncateSentence(String s, int k) {
+        String newSentence = "";
+        int count = 0;
+        for(int i = 0; i < s.length(); i++){
+            if(s.substring(i, i+1).equals(" ")){
+                count++;
+                if (count == k)
+                    break;
+                else
+                   newSentence += s.charAt(i); 
+            }
+            else
+                newSentence += s.charAt(i);
+        }
+        return newSentence;
+    }
+}
