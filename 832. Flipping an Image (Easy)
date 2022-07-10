@@ -1,0 +1,29 @@
+class Solution {
+    public int[][] flipAndInvertImage(int[][] image) {
+        image = flip(image);
+        image = invert(image);
+        return image;
+    }
+    public int[][] invert(int[][] image) {
+        for(int i = 0; i < image.length;i++){
+            for(int k = 0; k < image.length; k++){
+                if(image[i][k]==0)
+                    image[i][k]=1;
+                else
+                    image[i][k]=0;
+            }
+        }
+        return image;
+    }
+    public int[][] flip(int[][] image) {
+        int hold = 0;
+        for(int i = 0; i < image.length;i++){
+            for(int k = 0; k < image.length/2; k++){
+                hold = image[i][k];
+                image[i][k] = image[i][image.length-1-k];
+                image[i][image.length-1-k] = hold;
+            }
+        }
+        return image;
+    }
+}
