@@ -1,0 +1,27 @@
+class Solution {
+    public int[] constructRectangle(int area) {
+        int[] ans = new int[2];
+        int length = 0;
+        int width = 0;
+        int difference = area;
+        for(int i = 1; i <= area; i++){
+            if(area%i==0){
+                if(((i-area/i >=0)&&(i-area/i < difference)) || ((area/i -i >=0)&&(area/i -i < difference))){
+                    if(width>=i){
+                        length = i;
+                        width = area/length;
+                        difference = width - length;
+                    }
+                    else{
+                        width = i;
+                        length = area/width;
+                        difference = length-width;
+                    }
+                }
+            }
+        }
+        ans[0] = length;
+        ans[1] = width;
+        return ans;   
+    }
+}
