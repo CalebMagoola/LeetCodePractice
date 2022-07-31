@@ -1,0 +1,13 @@
+//Really inefficient speed and pretty bad space
+class Solution {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        HashMap<Integer, Integer> numbers = new HashMap<Integer, Integer>();
+        for(int i = 0; i < nums.length; i++){
+            if(numbers.containsKey(nums[i]) && Math.abs(numbers.get(nums[i]) - i) <= k){
+                return true;
+            }
+            numbers.put(nums[i],i);
+        }
+        return false;
+    }
+}
